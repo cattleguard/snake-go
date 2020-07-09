@@ -9,9 +9,9 @@ Play snake in your terminal. Built using [Termloop](https://github.com/JoelOtter
 - Play it: `$GOPATH/bin/snake-go`
 
 # Usage
-`Usage of ./snake-go:
-  -fullscreen
-    	Play fullscreen!
-  -realfood
-    	Realistic food options
-`
+
+    Usage of ./snake-go:
+    -fullscreen
+            Play fullscreen!
+    -realfood
+            Realistic food options
