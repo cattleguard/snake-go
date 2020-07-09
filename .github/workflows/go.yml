@@ -27,10 +27,6 @@ jobs:
 
     - name: Get dependencies
       run: go get -v -t -d ./...
-       # if [ -f Gopkg.toml ]; then
-       #     curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-       #     dep ensure
-       # fi
 
     - name: Build
       run: go build -v .
@@ -50,6 +46,7 @@ jobs:
     - name: Checkout Source
       uses: actions/checkout@v2
     - name: Run Gosec Security Scanner
-      uses: securego/gosec@master
-      with:
-        args: ./...
+      run:  |
+                export PATH=$PATH:$(go env GOPATH)/bin
+                go get github.com/securego/gosec/cmd/gosec
+                gosec ./...
