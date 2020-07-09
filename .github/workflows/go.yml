@@ -41,7 +41,7 @@ jobs:
       with:
         # golangci-lint docker release tag
         golangci_lint_version: 1.23 # optional, default is v1.23. Setting this follows guidance to not "break" all builds by blanket default change.
-        args: "run"
+        args: "run -E misspell -v"
         
     - name: Checkout Source
       uses: actions/checkout@v2
